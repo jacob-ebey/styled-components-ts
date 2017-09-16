@@ -1,13 +1,13 @@
 {
   "name": "styled-components-ts",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress and the added benefits of TypeScript 💅",
   "repository": {
     "type": "git",
     "url": "https://github.com/jacob-ebey/styled-components-ts"
   },
   "readme": "README.md",
-  "main": "dist/bundle.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "npm run tslint && webpack",
     "tslint": "tslint -p tsconfig.json --type-check"

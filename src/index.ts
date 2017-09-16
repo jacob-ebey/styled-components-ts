@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styledComponents, { StyledFunction } from 'styled-components';
+import styledComponents, { StyledFunction, ThemedStyledFunction } from 'styled-components';
 
 const styledComponentWithProps =
   <TProps, U extends HTMLElement = HTMLElement>

@@ -10,6 +10,7 @@
       "object-destructuring",
       "array-destructuring"
     ],
-    "no-inferrable-types": false
+    "no-inferrable-types": false,
+    "variable-name": false
   }
 }
