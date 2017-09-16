@@ -7,7 +7,7 @@
     "url": "https://github.com/jacob-ebey/styled-components-ts"
   },
   "readme": "README.md",
-  "main": "dist/index.js",
+  "main": "dist/styled-components.js",
   "scripts": {
     "build": "npm run tslint && webpack",
     "tslint": "tslint -p tsconfig.json --type-check"
