@@ -9,7 +9,10 @@
   "readme": "README.md",
   "main": "dist/styled-components.js",
   "files": [
-    "typings"
+    "src",
+    "dist",
+    "typings",
+    "examples"
   ],
   "scripts": {
     "build": "npm run tslint && webpack",
