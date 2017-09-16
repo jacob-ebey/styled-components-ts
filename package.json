@@ -1,6 +1,6 @@
 {
   "name": "styled-components-ts",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress and the added benefits of TypeScript 💅",
   "repository": {
     "type": "git",
@@ -32,6 +32,7 @@
     "tslint-config-airbnb": "5.3.0",
     "source-map-loader": "0.2.1",
     "typescript": "2.5.2",
+    "uglifyjs-webpack-plugin": "0.4.6",
     "webpack": "3.6.0"
   },
   "keywords": [
