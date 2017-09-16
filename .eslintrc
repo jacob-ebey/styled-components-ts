@@ -1,0 +1,6 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "linebreak-style": "off"
+  }
+}
