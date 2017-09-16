@@ -35,7 +35,7 @@ export default MyImage;
 
 ```
 
-Now we have all the typescript goodies for MyLabel like type checking and auto-complete for MyLabel.
+Now we have all the typescript goodies for MyImage like type checking and auto-complete.
 ```jsx
 import MyImage from './MyImage';
 
