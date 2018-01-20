@@ -1,7 +1,7 @@
 // Import react, styledComponents and styledComponentWithProps
 import * as React from 'react';
 import styledComponents from 'styled-components';
-import dist from '../dist';
+import styledComponentsTS from '../';
 
 // Import our image and it's props
 import MyImage, { MyImageProps } from './MyImage';
@@ -12,7 +12,7 @@ export interface ExpandedImageProps extends MyImageProps {
 }
 
 // Create a styled component with our props interface that extends MyImage
-const ExpandedImage = dist<ExpandedImageProps>(MyImage.extend)`
+const ExpandedImage = styledComponentsTS<ExpandedImageProps>(MyImage.extend)`
   background-color: ${props => props.backgroundColor || 'unset'};
 `;
 

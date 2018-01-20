@@ -2,9 +2,10 @@ const path = require('path');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-  entry: './src/styled-components.ts',
+  entry: './src/styled-components-ts.ts',
   output: {
-    filename: 'styled-components.js',
+    libraryTarget: "umd",
+    filename: 'styled-components-ts.js',
     path: path.join(__dirname, '/dist'),
   },
 

@@ -12,10 +12,10 @@ npm install --save styled-components-ts
 ## Getting Started
 
 ```typescript
-// Import react, styledComponents and styledComponentWithProps
+// Import react, styledComponents and styledComponentsTS
 import * as React from 'react';
 import styledComponents from 'styled-components';
-import styledComponentWithProps from 'styled-components-ts';
+import styledComponentsTS from 'styled-components-ts';
 
 // Create an interface for the component
 export interface MyImageProps {
@@ -25,7 +25,7 @@ export interface MyImageProps {
 }
 
 // Create a styled component with our props interface
-const MyImage = styledComponentWithProps<MyImageProps>(styledComponents.img) `
+const MyImage = styledComponentsTS<MyImageProps>(styledComponents.img) `
   width: ${props => props.size}px;
   height: ${props => props.size}px;
   border: ${props => props.borderSize || '4px'} solid ${props => props.borderColor || 'black'}
@@ -44,10 +44,10 @@ import MyImage from './MyImage';
 
 We can also extend our components and add new props with ease.
 ```typescript
-// Import react, styledComponents and styledComponentWithProps
+// Import react, styledComponents and styledComponentsTS
 import * as React from 'react';
 import styledComponents from 'styled-components';
-import styledComponentWithProps from 'styled-components-ts';
+import styledComponentsTS from 'styled-components-ts';
 
 // Import our image and it's props
 import MyImage, { MyImageProps } from './MyImage';
@@ -58,7 +58,7 @@ export interface ExpandedImageProps extends MyImageProps {
 }
 
 // Create a styled component with our props interface that extends MyImage
-const ExpandedImage = dist<ExpandedImageProps>(MyImage.extend)`
+const ExpandedImage = styledComponentsTS<ExpandedImageProps>(MyImage.extend)`
   background-color: ${props => props.backgroundColor || 'unset'};
 `;
 
