@@ -1,7 +1,7 @@
 // Import react, styledComponents and styledComponentWithProps
 import * as React from 'react';
 import styledComponents from 'styled-components';
-import styledComponentsTS from '../';
+import styledComponentsTs from '../src/styled-components-ts';
 
 // Create an interface for the component
 export interface MyImageProps {
@@ -11,7 +11,7 @@ export interface MyImageProps {
 }
 
 // Create a styled component with our props interface
-const MyImage = styledComponentsTS<MyImageProps>(styledComponents.img) `
+const MyImage = styledComponentsTs<MyImageProps>(styledComponents.img) `
   width: ${props => props.size}px;
   height: ${props => props.size}px;
   border: ${props => props.borderSize || '4px'} solid ${props => props.borderColor || 'black'}
