@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styledComponents, { ThemedStyledFunction } from 'styled-components';
+import styledComponents, { ThemedStyledFunction, StyledComponentClass } from 'styled-components';
 
 const styledComponentWithProps =
   <TProps, U extends HTMLElement = HTMLElement>
@@ -10,3 +10,4 @@ const styledComponentWithProps =
   };
 
 export default styledComponentWithProps;
+export { StyledComponentClass };
