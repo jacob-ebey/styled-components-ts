@@ -2,10 +2,10 @@ import * as React from 'react';
 import styledComponents, { ThemedStyledFunction } from 'styled-components';
 
 const styledComponentWithProps =
-  <TProps, U extends HTMLElement = HTMLElement>
+  <SProps, TProps extends object = any, U extends HTMLElement = HTMLElement>
     (
     styledFunction: ThemedStyledFunction<any, any>,
-  ): ThemedStyledFunction<TProps & React.HTMLProps<U>, any> => {
+  ): ThemedStyledFunction<SProps & React.HTMLProps<U>, TProps> => {
     return styledFunction;
   };
 
