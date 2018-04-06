@@ -1,12 +1,13 @@
-import * as React from 'react';
-import styledComponents, { ThemedStyledFunction } from 'styled-components';
+import * as React from 'react'
+import { ThemedStyledFunction, StyledComponentClass } from 'styled-components'
 
 const styledComponentWithProps =
-  <TProps, U extends HTMLElement = HTMLElement>
+  <SProps, TProps extends object = {}, U extends HTMLElement = HTMLElement>
     (
-    styledFunction: ThemedStyledFunction<any, any>,
-  ): ThemedStyledFunction<TProps & React.HTMLProps<U>, any> => {
-    return styledFunction;
-  };
+    styledFunction: ThemedStyledFunction<any, any>, // tslint:disable-line no-any
+  ): ThemedStyledFunction<SProps & React.HTMLProps<U>, TProps> => {
+    return styledFunction
+  }
 
-export default styledComponentWithProps;
+export { StyledComponentClass }
+export default styledComponentWithProps
