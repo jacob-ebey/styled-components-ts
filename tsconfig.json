@@ -9,7 +9,7 @@
     "experimentalDecorators": true,
     "lib": [ "es2015", "dom" ],
     "declaration": true,
-    "declarationDir": "./typings"
+    "declarationDir": "./lib"
   },
   "include": [
     "./src/**/*"

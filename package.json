@@ -1,14 +1,14 @@
 {
   "name": "styled-components-ts",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress and the added benefits of TypeScript 💅",
   "repository": {
     "type": "git",
     "url": "https://github.com/jacob-ebey/styled-components-ts"
   },
   "readme": "README.md",
-  "main": "dist/styled-components-ts.js",
-  "typings": "typings/styled-components-ts.d.ts",
+  "main": "lib/styled-components-ts.js",
+  "typings": "lib/styled-components-ts.d.ts",
   "files": [
     "src",
     "dist",
@@ -16,11 +16,13 @@
     "examples"
   ],
   "scripts": {
-    "build": "npm run tslint && webpack",
-    "tslint": "tslint -p tsconfig.json --type-check"
+    "build": "webpack",
+    "lint": "tslint -p tsconfig.json --type-check"
+  },
+  "peerDependencies": {
+    "react": ">= 0.14.0 < 17.0.0-0"
   },
   "dependencies": {
-    "react": "^16.2.0",
     "styled-components": "^2.4.0"
   },
   "devDependencies": {
@@ -35,10 +37,11 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-react": "^7.1.0",
-    "tslint": "5.7.0",
+    "react": "^16.3.1",
+    "tslint": "^5.9.1",
     "tslint-config-airbnb": "5.3.0",
     "source-map-loader": "0.2.1",
-    "typescript": "2.5.2",
+    "typescript": "^2.8.1",
     "uglifyjs-webpack-plugin": "0.4.6",
     "webpack": "3.6.0"
   },

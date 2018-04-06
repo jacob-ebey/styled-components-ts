@@ -1,0 +1,118 @@
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    # specify the version you desire here
+    - image: circleci/node:8.0
+
+
+whitelist: &whitelist
+  paths:
+    - .npmignore
+    - coverage/*
+    - lib/*
+    - node_modules/*
+    - src/*
+    - LICENSE
+    - package-lock.json
+    - package.json
+    - preprocessor.js
+    - README.md
+    - tsconfig.json
+    - tslint.json
+
+
+version: 2
+jobs:
+  checkout:
+    <<: *defaults
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+
+      - run:
+          name: Install NPM Packages
+          command: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - persist_to_workspace:
+          root: ~/repo
+          <<: *whitelist
+
+  lint:
+    <<: *defaults
+
+    steps:
+      - attach_workspace:
+          at: ~/repo
+
+      - run:
+          name: Run Linting
+          command: npm run lint
+
+  build:
+    <<: *defaults
+
+    steps:
+      - attach_workspace:
+          at: ~/repo
+
+      - run:
+          name: Build Typescript Code
+          command: npm run build
+
+  publish:
+    <<: *defaults
+
+    steps:
+      - attach_workspace:
+          at: ~/repo
+
+      - run:
+          name: NPM Credentials
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+
+      - run:
+          name: NPM Publish
+          command: npm publish
+
+
+workflows:
+  version: 2
+
+  build:
+    jobs:
+      - checkout:
+          filters:
+            branches:
+              only: /.*/
+
+      - lint:
+          requires:
+            - checkout
+          filters:
+            branches:
+              only: /.*/
+
+      - build:
+          requires:
+            - test
+            - lint
+          filters:
+            branches:
+              only: /.*/
+
+      - publish:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master

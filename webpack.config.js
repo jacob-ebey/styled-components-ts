@@ -4,9 +4,9 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
   entry: './src/styled-components-ts.ts',
   output: {
-    libraryTarget: "umd",
+    libraryTarget: 'umd',
     filename: 'styled-components-ts.js',
-    path: path.join(__dirname, '/dist'),
+    path: path.join(__dirname, '/lib'),
   },
 
   // Enable sourcemaps for debugging webpack's output.
