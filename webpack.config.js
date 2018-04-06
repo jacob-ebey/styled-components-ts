@@ -1,12 +1,12 @@
-const path = require('path');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const path = require('path')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   entry: './src/styled-components-ts.ts',
   output: {
-    libraryTarget: "umd",
+    libraryTarget: 'umd',
     filename: 'styled-components-ts.js',
-    path: path.join(__dirname, '/dist'),
+    path: path.join(__dirname, '/lib')
   },
 
   // Enable sourcemaps for debugging webpack's output.
@@ -14,7 +14,7 @@ module.exports = {
 
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: ['.ts', '.tsx', '.js', '.json'],
+    extensions: ['.ts', '.tsx', '.js', '.json']
   },
 
   module: {
@@ -22,20 +22,20 @@ module.exports = {
       // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
       {
         test: /\.tsx?$/,
-        loader: 'awesome-typescript-loader',
+        loader: 'awesome-typescript-loader'
       },
 
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
       {
         enforce: 'pre',
         test: /\.js$/,
-        loader: 'source-map-loader',
-      },
-    ],
+        loader: 'source-map-loader'
+      }
+    ]
   },
 
   plugins: [
-    new UglifyJSPlugin(),
+    new UglifyJSPlugin()
   ],
 
   // When importing a module whose path matches one of the following, just
@@ -43,6 +43,6 @@ module.exports = {
   // This is important because it allows us to avoid bundling all of our
   // dependencies, which allows browsers to cache those libraries between builds.
   externals: {
-    react: 'React',
-  },
-};
+    react: 'React'
+  }
+}

@@ -1,6 +1,5 @@
-.vscode
-dist
-typings
-node_modules
+.vscode/
+lib/
+node_modules/
 
 npm-debug.log

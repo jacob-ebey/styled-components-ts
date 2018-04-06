@@ -3,13 +3,14 @@
     "outDir": "./dist/",
     "sourceMap": true,
     "noImplicitAny": true,
+    "strictNullChecks": true,
     "module": "commonjs",
     "target": "es5",
     "jsx": "react",
     "experimentalDecorators": true,
     "lib": [ "es2015", "dom" ],
     "declaration": true,
-    "declarationDir": "./typings"
+    "declarationDir": "./lib"
   },
   "include": [
     "./src/**/*"
