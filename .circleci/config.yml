@@ -7,18 +7,19 @@ defaults: &defaults
 
 whitelist: &whitelist
   paths:
-    - .npmignore
-    - coverage/*
     - lib/*
     - node_modules/*
     - src/*
+    - .eslintrc
+    - .npmignore
+    - coverage/*
     - LICENSE
     - package-lock.json
     - package.json
-    - preprocessor.js
     - README.md
     - tsconfig.json
     - tslint.json
+    - webpack.config.js
 
 
 version: 2
