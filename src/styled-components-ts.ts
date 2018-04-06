@@ -4,7 +4,7 @@ import { ThemedStyledFunction, StyledComponentClass } from 'styled-components'
 const styledComponentWithProps =
   <SProps, TProps extends object = {}, U extends HTMLElement = HTMLElement>
     (
-    styledFunction: ThemedStyledFunction<any, any>, // tslint:disable-line no-any
+    styledFunction: ThemedStyledFunction<any, any>, // tslint:disable-line
   ): ThemedStyledFunction<SProps & React.HTMLProps<U>, TProps> => {
     return styledFunction
   }
