@@ -105,7 +105,6 @@ workflows:
 
       - build:
           requires:
-            - test
             - lint
           filters:
             branches:
