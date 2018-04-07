@@ -3,6 +3,8 @@
 </a>
 <br />
 
+[![CircleCI](https://circleci.com/gh/jacob-ebey/styled-components-ts.svg?style=svg)](https://circleci.com/gh/jacob-ebey/styled-components-ts)
+
 Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress and the added benefits of TypeScript 💅
 
 ```
