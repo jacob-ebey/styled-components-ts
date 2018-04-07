@@ -48,7 +48,7 @@ jobs:
           root: ~/repo
           <<: *whitelist
 
-  test:
+  lint:
     <<: *defaults
 
     steps:
@@ -96,7 +96,7 @@ workflows:
             branches:
               only: /.*/
 
-      - test:
+      - lint:
           requires:
             - checkout
           filters:
@@ -105,7 +105,6 @@ workflows:
 
       - build:
           requires:
-            - test
             - lint
           filters:
             branches:
