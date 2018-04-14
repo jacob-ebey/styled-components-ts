@@ -17,8 +17,9 @@ whitelist: &whitelist
     - package-lock.json
     - package.json
     - README.md
-    - tsconfig.json
+    - tsconfig.examples.json
     - tslint.json
+    - webpack.config.examples.js
     - webpack.config.js
 
 
