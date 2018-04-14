@@ -7,12 +7,13 @@ defaults: &defaults
 
 whitelist: &whitelist
   paths:
+    - examples/*
     - lib/*
     - node_modules/*
     - src/*
+    - coverage/*
     - .eslintrc
     - .npmignore
-    - coverage/*
     - LICENSE
     - package-lock.json
     - package.json
