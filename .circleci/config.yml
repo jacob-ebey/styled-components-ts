@@ -73,6 +73,10 @@ jobs:
       - run:
           name: Build Typescript Code
           command: npm run build
+      
+      - persist_to_workspace:
+          root: ~/repo
+          <<: *whitelist
 
   publish:
     <<: *defaults
