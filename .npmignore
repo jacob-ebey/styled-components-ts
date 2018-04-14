@@ -1,3 +1,4 @@
+.circleci/
 .vscode/
 examples/
 node_modules/
