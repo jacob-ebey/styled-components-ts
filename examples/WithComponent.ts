@@ -7,7 +7,7 @@ interface IButtonProps {
 
 export const Button = styledComponentsTs<IButtonProps>(styledComponents.a)`
   border: none
-  background-color: ${props => props.color }
+  background-color: ${ props => props.color }
 `
 
 interface IBorderedButtonProps extends IButtonProps {
@@ -15,10 +15,10 @@ interface IBorderedButtonProps extends IButtonProps {
 }
 
 export const BorderedButton = styledComponentsTs<IBorderedButtonProps>(Button.extend)`
-  border: 2px solid ${props => props.borderColor }
+  border: 2px solid ${ props => props.borderColor }
 `
 
 export const ButtonLink = styledComponentsTs<IBorderedButtonProps>(
   BorderedButton.withComponent('a').extend)`
-    border: 2px solid ${props => props.borderColor }
+    border: 2px solid ${ props => props.borderColor }
 `

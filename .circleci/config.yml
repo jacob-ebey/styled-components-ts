@@ -7,18 +7,21 @@ defaults: &defaults
 
 whitelist: &whitelist
   paths:
+    - examples/*
     - lib/*
     - node_modules/*
     - src/*
+    - coverage/*
     - .eslintrc
     - .npmignore
-    - coverage/*
     - LICENSE
     - package-lock.json
     - package.json
     - README.md
+    - tsconfig.examples.json
     - tsconfig.json
     - tslint.json
+    - webpack.config.examples.js
     - webpack.config.js
 
 
@@ -77,6 +80,28 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           <<: *whitelist
+  
+  lint_examples:
+    <<: *defaults
+
+    steps:
+      - attach_workspace:
+          at: ~/repo
+
+      - run:
+          name: Run Example Linting
+          command: npm run lint:examples
+
+  build_examples:
+    <<: *defaults
+
+    steps:
+      - attach_workspace:
+          at: ~/repo
+
+      - run:
+          name: Build Example Typescript Code
+          command: npm run build:examples
 
   publish:
     <<: *defaults
@@ -113,7 +138,21 @@ workflows:
 
       - build:
           requires:
-            - lint
+            - checkout
+          filters:
+            branches:
+              only: /.*/
+      
+      - lint_examples:
+          requires:
+            - checkout
+          filters:
+            branches:
+              only: /.*/
+
+      - build_examples:
+          requires:
+            - checkout
           filters:
             branches:
               only: /.*/
@@ -121,6 +160,9 @@ workflows:
       - publish:
           requires:
             - build
+            - lint
+            - build_examples
+            - lint_examples
           filters:
             branches:
               only: master

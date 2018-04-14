@@ -4,10 +4,10 @@ import styledComponents from 'styled-components'
 import styledComponentsTs from '../src/styled-components-ts'
 
 // Import our image and it's props
-import MyImage, { MyImageProps } from './MyImage'
+import MyImage, { IMyImageProps } from './MyImage'
 
 // Create an interface for the component that extends the base image props
-export interface IExpandedImageProps extends MyImageProps {
+export interface IExpandedImageProps extends IMyImageProps {
   backgroundColor?: string
 }
 

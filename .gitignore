@@ -1,4 +1,5 @@
 .vscode/
+examples_dist
 lib/
 node_modules/
 npm-debug.log
