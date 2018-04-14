@@ -98,7 +98,7 @@ jobs:
 
       - run:
           name: Build Example Typescript Code
-          command: npm run build:exampels
+          command: npm run build:examples
 
   publish:
     <<: *defaults
