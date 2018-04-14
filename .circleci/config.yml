@@ -77,6 +77,28 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           <<: *whitelist
+  
+  lint_examples:
+    <<: *defaults
+
+    steps:
+      - attach_workspace:
+          at: ~/repo
+
+      - run:
+          name: Run Example Linting
+          command: npm run lint:examples
+
+  build_examples:
+    <<: *defaults
+
+    steps:
+      - attach_workspace:
+          at: ~/repo
+
+      - run:
+          name: Build Example Typescript Code
+          command: npm run build:exampels
 
   publish:
     <<: *defaults
@@ -113,7 +135,21 @@ workflows:
 
       - build:
           requires:
-            - lint
+            - checkout
+          filters:
+            branches:
+              only: /.*/
+      
+      - lint_examples:
+          requires:
+            - checkout
+          filters:
+            branches:
+              only: /.*/
+
+      - build_examples:
+          requires:
+            - checkout
           filters:
             branches:
               only: /.*/
@@ -121,6 +157,9 @@ workflows:
       - publish:
           requires:
             - build
+            - lint
+            - build_examples
+            - lint_examples
           filters:
             branches:
               only: master

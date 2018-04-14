@@ -1,13 +1,16 @@
 .circleci/
 .vscode/
 examples/
+examples_dist/
 node_modules/
 src/
 
 .eslintrc
 package-lock.json
+tsconfig.examples.json
 tsconfig.json
 tslint.json
+webpack.config.examples.js
 webpack.config.js
 
 npm-debug.log
