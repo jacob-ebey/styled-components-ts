@@ -61,10 +61,6 @@ jobs:
       - run:
           name: Run Linting
           command: npm run lint
-      
-      - persist_to_workspace:
-          root: ~/repo
-          <<: *whitelist
 
   build:
     <<: *defaults
@@ -79,7 +75,8 @@ jobs:
       
       - persist_to_workspace:
           root: ~/repo
-          <<: *whitelist
+          paths:
+            - lib/*
   
   lint_examples:
     <<: *defaults
