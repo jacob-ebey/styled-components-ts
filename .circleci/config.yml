@@ -18,6 +18,7 @@ whitelist: &whitelist
     - package.json
     - README.md
     - tsconfig.examples.json
+    - tsconfig.json
     - tslint.json
     - webpack.config.examples.js
     - webpack.config.js
