@@ -67,4 +67,21 @@ const ExpandedImage = styledComponentsTS<ExpandedImageProps>(MyImage.extend)`
 export default ExpandedImage
 ```
 
+## Using styled-components v4+?
+If you're using a version of styled-components greater than `4.0.0` you do not need this library. See below for example usage:
+
+```tsx
+const Button = styled.div<{ selected?: boolean }>`
+  background: ${props => props.selected ? 'red' : 'blue'};
+`
+
+// or
+interface IButton {
+  selected?: boolean
+}
+const Button = styled.div<IButton>`
+  background: ${props => props.selected ? 'red' : 'blue'};
+`
+```
+
 For more information please see https://github.com/styled-components/styled-components
